@@ -11,6 +11,7 @@ requests:
     path:
       - "{{BaseURL}}/awstats/"
       - "{{BaseURL}}/awstats.conf"
+      - "{{BaseURL}}/webstat/"
 
     matchers:
       - type: word
@@ -24,3 +25,9 @@ requests:
           - "Index of /awstats"
           - "Parent Directory"
         condition: and
+        
+      - type: word
+        words:
+          - "AWStats"
+          - "awstatsicons"
+        condition: or
